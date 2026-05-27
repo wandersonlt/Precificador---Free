@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precificador Pro - Sistema Multi-Usuário</title>
+    <title>Presificador Pro Online</title>
     
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -30,6 +30,7 @@
             margin: 0 auto;
         }
 
+        /* Header com gradiente */
         .header {
             text-align: center;
             padding: 40px 20px;
@@ -38,6 +39,7 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -48,12 +50,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .logo-sub {
             font-size: 1.2rem;
             color: #FFD700;
             letter-spacing: 8px;
+            margin-top: 5px;
         }
 
         .tagline {
@@ -61,8 +65,10 @@
             color: #aaa;
             letter-spacing: 3px;
             margin-top: 15px;
+            font-weight: 300;
         }
 
+        /* User Bar */
         .user-bar {
             display: flex;
             justify-content: flex-end;
@@ -113,6 +119,7 @@
             transform: translateY(-2px);
         }
 
+        /* Login Container */
         .login-container {
             display: flex;
             justify-content: center;
@@ -197,10 +204,7 @@
             text-decoration: underline;
         }
 
-        .main-app {
-            display: none;
-        }
-
+        /* Navegação */
         .nav-tabs {
             display: flex;
             gap: 5px;
@@ -208,6 +212,8 @@
             background: rgba(45, 45, 48, 0.9);
             border-radius: 15px;
             padding: 5px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         .nav-btn {
@@ -221,6 +227,7 @@
             cursor: pointer;
             border-radius: 12px;
             transition: all 0.3s ease;
+            font-family: inherit;
         }
 
         .nav-btn:hover {
@@ -231,8 +238,10 @@
         .nav-btn.active {
             background: linear-gradient(135deg, #2A6B2A, #1a4a1a);
             color: #FFD700;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        /* Cards */
         .card {
             background: rgba(45, 45, 48, 0.95);
             border-radius: 15px;
@@ -240,6 +249,12 @@
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .card-title {
@@ -251,6 +266,7 @@
             display: inline-block;
         }
 
+        /* Switch Toggle */
         .switch-container {
             display: flex;
             align-items: center;
@@ -259,6 +275,16 @@
             padding: 15px 20px;
             border-radius: 12px;
             margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .switch-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #FFD700;
         }
 
         .switch {
@@ -312,6 +338,7 @@
             font-weight: bold;
             padding: 4px 12px;
             border-radius: 20px;
+            background: rgba(0,0,0,0.5);
         }
 
         .switch-status.active {
@@ -322,6 +349,7 @@
             color: #FF6B6B;
         }
 
+        /* Formulários */
         .form-group {
             margin-bottom: 15px;
         }
@@ -341,11 +369,13 @@
             border-radius: 8px;
             color: white;
             font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         input:focus, select:focus {
             outline: none;
             border-color: #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         input:disabled {
@@ -353,6 +383,7 @@
             cursor: not-allowed;
         }
 
+        /* Botões */
         .btn {
             padding: 12px 24px;
             border: none;
@@ -361,6 +392,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1rem;
+            font-family: inherit;
         }
 
         .btn-primary {
@@ -370,6 +402,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(42, 107, 42, 0.4);
         }
 
         .btn-danger {
@@ -379,6 +412,7 @@
 
         .btn-danger:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
         }
 
         .btn-secondary {
@@ -392,9 +426,8 @@
         }
 
         .btn-sm {
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            margin: 0 3px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
         }
 
         .btn-group {
@@ -404,9 +437,11 @@
             flex-wrap: wrap;
         }
 
+        /* Tabela */
         .table-container {
             overflow-x: auto;
             border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
         }
 
         table {
@@ -419,6 +454,7 @@
             padding: 12px;
             text-align: left;
             color: #FFD700;
+            font-weight: bold;
             border-bottom: 2px solid #FFD700;
         }
 
@@ -431,6 +467,7 @@
             background: rgba(255, 215, 0, 0.1);
         }
 
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -470,6 +507,7 @@
             color: #FFD700;
         }
 
+        /* Total de vendas */
         .total-card {
             background: linear-gradient(135deg, rgba(42, 107, 42, 0.9), rgba(26, 74, 26, 0.9));
             text-align: center;
@@ -481,6 +519,7 @@
             color: #FFD700;
         }
 
+        /* Filtro */
         .filter-group {
             display: flex;
             gap: 15px;
@@ -488,6 +527,12 @@
             flex-wrap: wrap;
         }
 
+        .filter-group select {
+            width: auto;
+            min-width: 150px;
+        }
+
+        /* Páginas */
         .page {
             display: none;
         }
@@ -496,50 +541,13 @@
             display: block;
         }
 
-        .status-offline {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff6b6b;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            display: none;
-            z-index: 2000;
-        }
-
-        .product-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            margin: 5px 0;
-            background: rgba(26, 26, 27, 0.8);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .product-item:hover {
-            background: rgba(42, 107, 42, 0.3);
-        }
-
-        .product-info {
-            flex: 1;
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 5px;
-        }
-
         /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             color: white;
             padding: 12px 24px;
             border-radius: 50px;
@@ -551,6 +559,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.3);
             pointer-events: none;
+            white-space: nowrap;
         }
 
         .toast.show {
@@ -572,205 +581,261 @@
             color: white;
         }
 
+        /* Product item animation */
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(26, 26, 27, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: slideIn 0.3s ease;
+        }
+
+        .product-item:hover {
+            background: rgba(42, 107, 42, 0.3);
+            transform: translateX(5px);
+        }
+
+        .product-item.removing {
+            animation: fadeOut 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+        }
+
+        /* Status offline */
+        .status-offline {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: none;
+            z-index: 2000;
+        }
+
         @media (max-width: 768px) {
             .logo { font-size: 2rem; }
             .btn-group { flex-direction: column; }
             .btn { width: 100%; }
+            .switch-container { flex-direction: column; gap: 15px; text-align: center; }
             .user-bar { flex-direction: column; text-align: center; }
-            .product-item { flex-direction: column; gap: 10px; }
-            .product-actions { width: 100%; justify-content: center; }
+            .toast { white-space: normal; text-align: center; max-width: 90%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Toast Notification -->
-        <div id="toast" class="toast"></div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
 
-        <!-- Status Offline -->
-        <div id="offlineStatus" class="status-offline">
-            ⚠️ Modo Offline - Dados salvos localmente
-        </div>
+    <!-- Status Offline -->
+    <div id="offlineStatus" class="status-offline">⚠️ Modo Offline - Dados salvos localmente</div>
 
-        <!-- Login Section -->
-        <div id="loginSection">
-            <div class="login-container">
-                <div class="login-card">
-                    <div class="logo" style="font-size: 2rem;">Precificador</div>
-                    <div class="logo-sub">PRO</div>
-                    <h2 style="margin-top: 20px;">Acesse sua conta</h2>
-                    <input type="email" id="loginEmail" class="login-input" placeholder="E-mail">
-                    <input type="password" id="loginPassword" class="login-input" placeholder="Senha">
-                    <button class="btn-login" onclick="login()">Entrar</button>
-                    <div class="forgot-password">
-                        <a onclick="showResetPassword()">Esqueceu a senha?</a>
-                    </div>
-                    <div class="switch-auth">
-                        Não tem uma conta? <a onclick="showRegister()">Criar conta grátis</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Register Section -->
-        <div id="registerSection" style="display: none;">
-            <div class="login-container">
-                <div class="login-card">
-                    <div class="logo" style="font-size: 2rem;">Precificador</div>
-                    <div class="logo-sub">PRO</div>
-                    <h2 style="margin-top: 20px;">Criar conta</h2>
-                    <input type="email" id="registerEmail" class="login-input" placeholder="E-mail">
-                    <input type="password" id="registerPassword" class="login-input" placeholder="Senha (mínimo 6 caracteres)">
-                    <button class="btn-login" onclick="register()">Criar conta</button>
-                    <div class="switch-auth">
-                        Já tem uma conta? <a onclick="showLogin()">Fazer login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Reset Password Section -->
-        <div id="resetSection" style="display: none;">
-            <div class="login-container">
-                <div class="login-card">
-                    <div class="logo" style="font-size: 2rem;">Precificador</div>
-                    <div class="logo-sub">PRO</div>
-                    <h2 style="margin-top: 20px;">Recuperar Senha</h2>
-                    <p style="color: #aaa; margin-bottom: 20px;">Digite seu e-mail para receber o link de recuperação</p>
-                    <input type="email" id="resetEmail" class="login-input" placeholder="E-mail cadastrado">
-                    <button class="btn-login" onclick="sendPasswordReset()">Enviar link de recuperação</button>
-                    <div class="switch-auth">
-                        <a onclick="showLogin()">Voltar para o login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main App -->
-        <div id="mainApp" class="main-app">
-            <div class="user-bar">
-                <div class="user-info">
-                    <div class="user-avatar" id="userAvatar">U</div>
-                    <span class="user-email" id="userEmail"></span>
-                </div>
-                <button class="btn-logout" onclick="logout()">🚪 Sair</button>
-            </div>
-
-            <div class="header">
-                <div class="logo">Precificador</div>
+    <!-- Login Section -->
+    <div id="loginSection">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo" style="font-size: 2rem;">PRESIFICADOR</div>
                 <div class="logo-sub">PRO</div>
-                <div class="tagline">PRECISÃO · ESTRATÉGIA · LUCRO</div>
-            </div>
-
-            <div class="nav-tabs">
-                <button class="nav-btn active" onclick="switchTab('Precificador')">💰 Precificador</button>
-                <button class="nav-btn" onclick="switchTab('vendas')">📊 VENDAS</button>
-            </div>
-
-            <!-- Precificador Page -->
-            <div id="PrecificadorPage" class="page active">
-                <div class="card">
-                    <div class="card-title">1. IMPORTAÇÃO</div>
-                    <div class="switch-container">
-                        <div class="switch-label">
-                            <span>🌎</span>
-                            <span>Ativar Cálculo em Dólar</span>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="dolarToggle" onchange="toggleDolar()">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="dolarStatus" class="switch-status inactive">DESLIGADO</span>
-                    </div>
-                    <div id="dolarFields">
-                        <div class="form-group">
-                            <label>💰 Valor do Produto ($):</label>
-                            <input type="number" id="valorDolar" step="0.01" value="0.00" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label>💵 USD Hoje (R$):</label>
-                            <input type="number" id="cotacaoDolar" step="0.01" value="5.50" disabled>
-                        </div>
-                        <button class="btn btn-secondary" id="btnConverter" onclick="converterDolar()" disabled>🔄 CONVERTER PARA REAL</button>
-                    </div>
+                <h2 style="margin-top: 20px;">Acesse sua conta</h2>
+                <input type="email" id="loginEmail" class="login-input" placeholder="E-mail">
+                <input type="password" id="loginPassword" class="login-input" placeholder="Senha">
+                <button class="btn-login" onclick="login()">Entrar</button>
+                <div class="forgot-password">
+                    <a onclick="showResetPassword()">Esqueceu a senha?</a>
                 </div>
-
-                <div class="card">
-                    <div class="card-title">2. MARGENS E TAXAS</div>
-                    <div class="form-group">
-                        <label>📦 Unitário Base (R$):</label>
-                        <input type="number" id="vlrBase" step="0.01" value="0.00">
-                    </div>
-                    <div class="form-group">
-                        <label>📈 Taxa Revenda (%):</label>
-                        <input type="number" id="taxaRevenda" step="0.01" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label>🎯 Margem Lucro (%):</label>
-                        <input type="number" id="margemLucro" step="0.01" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label>🔢 Quantidade:</label>
-                        <input type="number" id="quantidade" value="1">
-                    </div>
-                    <button class="btn btn-primary" onclick="calcularPreco()">💰 GERAR PREÇO FINAL</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">📋 RESULTADO</div>
-                    <div id="resultadoArea" style="font-family: monospace; background: #1A1A1B; padding: 15px; border-radius: 8px; min-height: 150px;">
-                        Aguardando cálculo...
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vendas Page -->
-            <div id="vendasPage" class="page">
-                <div class="card total-card">
-                    <div class="card-title">💰 TOTAL DE VENDAS</div>
-                    <div class="total-value" id="totalVendas">R$ 0,00</div>
-                    <div id="periodoInfo" style="font-size: 0.8rem; margin-top: 5px;">Período: Este Mês</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">🔍 FILTRO POR PERÍODO</div>
-                    <div class="filter-group">
-                        <select id="filtroPeriodo" onchange="onFiltroChange()">
-                            <option value="todos">Todos</option>
-                            <option value="hoje">Hoje</option>
-                            <option value="7dias">Últimos 7 dias</option>
-                            <option value="mes" selected>Este Mês</option>
-                            <option value="mesAnterior">Mês Anterior</option>
-                            <option value="personalizado">Personalizado</option>
-                        </select>
-                        <div id="personalizadoFields" style="display: none;">
-                            <input type="date" id="dataInicio">
-                            <input type="date" id="dataFim">
-                            <button class="btn btn-secondary btn-sm" onclick="aplicarFiltroPersonalizado()">Aplicar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="abrirModalProdutos()">📦 GERENCIAR PRODUTOS</button>
-                    <button class="btn btn-primary" onclick="abrirModalVenda()">💰 REGISTRAR VENDA</button>
-                    <button class="btn btn-danger" onclick="abrirModalExcluirVenda()">🗑️ EXCLUIR VENDA</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">📋 HISTÓRICO DE VENDAS</div>
-                    <div class="table-container">
-                        <table id="tabelaVendas">
-                            <thead><tr><th>ID</th><th>Data</th><th>Produto</th><th>Qtd</th><th>Valor Unit.</th><th>Total</th></tr></thead>
-                            <tbody id="tabelaVendasBody"></tbody>
-                        </table>
-                    </div>
+                <div class="switch-auth">
+                    Não tem uma conta? <a onclick="showRegister()">Criar conta grátis</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modais -->
+    <!-- Register Section -->
+    <div id="registerSection" style="display: none;">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo" style="font-size: 2rem;">PRESIFICADOR</div>
+                <div class="logo-sub">PRO</div>
+                <h2 style="margin-top: 20px;">Criar conta</h2>
+                <input type="email" id="registerEmail" class="login-input" placeholder="E-mail">
+                <input type="password" id="registerPassword" class="login-input" placeholder="Senha (mínimo 6 caracteres)">
+                <button class="btn-login" onclick="register()">Criar conta</button>
+                <div class="switch-auth">
+                    Já tem uma conta? <a onclick="showLogin()">Fazer login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Password Section -->
+    <div id="resetSection" style="display: none;">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo" style="font-size: 2rem;">PRESIFICADOR</div>
+                <div class="logo-sub">PRO</div>
+                <h2 style="margin-top: 20px;">Recuperar Senha</h2>
+                <p style="color: #aaa; margin-bottom: 20px;">Digite seu e-mail para receber o link de recuperação</p>
+                <input type="email" id="resetEmail" class="login-input" placeholder="E-mail cadastrado">
+                <button class="btn-login" onclick="sendPasswordReset()">Enviar link de recuperação</button>
+                <div class="switch-auth">
+                    <a onclick="showLogin()">Voltar para o login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" class="container" style="display: none;">
+        <div class="user-bar">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <span class="user-email" id="userEmail"></span>
+            </div>
+            <button class="btn-logout" onclick="logout()">🚪 Sair</button>
+        </div>
+
+        <div class="header">
+            <div class="logo">PRESIFICADOR</div>
+            <div class="logo-sub">PRO</div>
+            <div class="tagline">PRECISÃO · ESTRATÉGIA · LUCRO</div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-btn active" onclick="switchTab('presificador')">💰 PRESIFICADOR</button>
+            <button class="nav-btn" onclick="switchTab('vendas')">📊 VENDAS</button>
+        </div>
+
+        <!-- Página Presificador -->
+        <div id="presificadorPage" class="page active">
+            <div class="card">
+                <div class="card-title">1. IMPORTAÇÃO</div>
+                
+                <div class="switch-container">
+                    <div class="switch-label">
+                        <span>🌎</span>
+                        <span>Ativar Cálculo em Dólar</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="dolarToggle" onchange="toggleDolar()">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="dolarStatus" class="switch-status inactive">DESLIGADO</span>
+                </div>
+
+                <div id="dolarFields">
+                    <div class="form-group">
+                        <label>💰 Valor do Produto ($):</label>
+                        <input type="number" id="valorDolar" step="0.01" value="0.00" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>💵 USD Hoje (R$):</label>
+                        <input type="number" id="cotacaoDolar" step="0.01" value="5.50" disabled>
+                    </div>
+                    <button class="btn btn-secondary" id="btnConverter" onclick="converterDolar()" disabled>🔄 CONVERTER PARA REAL</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">2. MARGENS E TAXAS</div>
+                <div class="form-group">
+                    <label>📦 Unitário Base (R$):</label>
+                    <input type="number" id="vlrBase" step="0.01" value="0.00">
+                </div>
+                <div class="form-group">
+                    <label>📈 Taxa Revenda (%):</label>
+                    <input type="number" id="taxaRevenda" step="0.01" value="0">
+                </div>
+                <div class="form-group">
+                    <label>🎯 Margem Lucro (%):</label>
+                    <input type="number" id="margemLucro" step="0.01" value="0">
+                </div>
+                <div class="form-group">
+                    <label>🔢 Quantidade:</label>
+                    <input type="number" id="quantidade" value="1">
+                </div>
+                <button class="btn btn-primary" onclick="calcularPreco()">💰 GERAR PREÇO FINAL</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📋 RESULTADO</div>
+                <div id="resultadoArea" style="font-family: monospace; white-space: pre-wrap; background: #1A1A1B; padding: 15px; border-radius: 8px; min-height: 150px;">
+                    Aguardando cálculo...
+                </div>
+            </div>
+        </div>
+
+        <!-- Página Vendas -->
+        <div id="vendasPage" class="page">
+            <div class="card total-card">
+                <div class="card-title">💰 TOTAL DE VENDAS</div>
+                <div class="total-value" id="totalVendas">R$ 0,00</div>
+                <div id="periodoInfo" style="font-size: 0.8rem; margin-top: 5px;">Período: Este Mês</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔍 FILTRO POR PERÍODO</div>
+                <div class="filter-group">
+                    <select id="filtroPeriodo" onchange="onFiltroChange()">
+                        <option value="todos">Todos</option>
+                        <option value="hoje">Hoje</option>
+                        <option value="7dias">Últimos 7 dias</option>
+                        <option value="mes" selected>Este Mês</option>
+                        <option value="mesAnterior">Mês Anterior</option>
+                        <option value="personalizado">Personalizado</option>
+                    </select>
+                    <div id="personalizadoFields" style="display: none;">
+                        <input type="date" id="dataInicio">
+                        <input type="date" id="dataFim">
+                        <button class="btn btn-secondary btn-sm" onclick="aplicarFiltroPersonalizado()">Aplicar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="abrirModalProdutos()">📦 GERENCIAR PRODUTOS</button>
+                <button class="btn btn-primary" onclick="abrirModalVenda()">💰 REGISTRAR VENDA</button>
+                <button class="btn btn-danger" onclick="abrirModalExcluirVenda()">🗑️ EXCLUIR VENDA</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📋 HISTÓRICO DE VENDAS</div>
+                <div class="table-container">
+                    <table id="tabelaVendas">
+                        <thead><tr><th>ID</th><th>Data</th><th>Produto</th><th>Qtd</th><th>Valor Unit.</th><th>Total</th></tr></thead>
+                        <tbody id="tabelaVendasBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Produtos -->
     <div id="modalProdutos" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -792,6 +857,7 @@
         </div>
     </div>
 
+    <!-- Modal Registrar Venda -->
     <div id="modalVenda" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -811,6 +877,7 @@
         </div>
     </div>
 
+    <!-- Modal Excluir Venda -->
     <div id="modalExcluir" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -840,44 +907,35 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
-        
-        // Configurar Firestore para persistência offline
-        db.enablePersistence()
-            .catch((err) => {
-                if (err.code == 'failed-precondition') {
-                    console.log('Persistência offline já ativa');
-                } else if (err.code == 'unimplemented') {
-                    console.log('Persistência offline não suportada');
-                }
-            });
+
+        // Configurar persistência offline
+        db.enablePersistence().catch((err) => {
+            if (err.code == 'failed-precondition') console.log('Persistência offline já ativa');
+            else if (err.code == 'unimplemented') console.log('Persistência offline não suportada');
+        });
 
         // Variáveis globais
         let currentUser = null;
-        let userData = { produtos: [], vendas: [] };
+        let produtos = [];
+        let vendas = [];
         let descontoRules = { 1: 0, 5: 5, 10: 10, 50: 15 };
         let isOnline = navigator.onLine;
 
-        // ==================== TOAST NOTIFICATION ====================
+        // ==================== TOAST ====================
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
             toast.textContent = message;
             toast.className = `toast ${type} show`;
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // Monitorar status da conexão
+        // Monitorar conexão
         window.addEventListener('online', () => {
             isOnline = true;
             document.getElementById('offlineStatus').style.display = 'none';
-            if (currentUser) {
-                sincronizarDadosOffline();
-                showToast('🌐 Conexão restaurada! Dados sincronizados.', 'success');
-            }
+            if (currentUser) sincronizarDadosOffline();
+            showToast('🌐 Conexão restaurada! Dados sincronizados.', 'success');
         });
-        
         window.addEventListener('offline', () => {
             isOnline = false;
             document.getElementById('offlineStatus').style.display = 'block';
@@ -905,45 +963,25 @@
 
         async function sendPasswordReset() {
             const email = document.getElementById('resetEmail').value;
-            
-            if (!email) {
-                showToast('Digite seu e-mail!', 'error');
-                return;
-            }
-
+            if (!email) { showToast('Digite seu e-mail!', 'error'); return; }
             try {
                 await auth.sendPasswordResetEmail(email);
                 showToast('✅ Link de recuperação enviado para o e-mail!', 'success');
                 setTimeout(() => showLogin(), 2000);
                 document.getElementById('resetEmail').value = '';
             } catch (error) {
-                console.error('Erro ao enviar recuperação:', error);
-                if (error.code === 'auth/user-not-found') {
-                    showToast('❌ E-mail não encontrado. Verifique se está cadastrado.', 'error');
-                } else {
-                    showToast('❌ Erro ao enviar recuperação: ' + error.message, 'error');
-                }
+                showToast('❌ Erro ao enviar recuperação: ' + error.message, 'error');
             }
         }
 
         async function register() {
             const email = document.getElementById('registerEmail').value;
             const password = document.getElementById('registerPassword').value;
-
-            if (!email || !password) {
-                showToast('Preencha todos os campos!', 'error');
-                return;
-            }
-
-            if (password.length < 6) {
-                showToast('A senha deve ter pelo menos 6 caracteres!', 'error');
-                return;
-            }
+            if (!email || !password) { showToast('Preencha todos os campos!', 'error'); return; }
+            if (password.length < 6) { showToast('A senha deve ter pelo menos 6 caracteres!', 'error'); return; }
 
             try {
                 const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-                const user = userCredential.user;
-                
                 const dadosIniciais = {
                     email: email,
                     produtos: [
@@ -955,18 +993,9 @@
                         { id: 1, produto_id: 1, produto_nome: "Conta Instagram Premium", quantidade: 2, valor_unitario: 45.00, valor_total: 90.00, data: new Date().toISOString(), cancelada: false }
                     ]
                 };
-                
-                try {
-                    await db.collection('users').doc(user.uid).set(dadosIniciais);
-                } catch (error) {
-                    console.log('Offline: salvando dados localmente');
-                    localStorage.setItem(`user_${user.uid}`, JSON.stringify(dadosIniciais));
-                }
-                
+                await db.collection('users').doc(userCredential.user.uid).set(dadosIniciais);
                 showToast('✅ Conta criada com sucesso! Faça login.', 'success');
                 showLogin();
-                document.getElementById('registerEmail').value = '';
-                document.getElementById('registerPassword').value = '';
             } catch (error) {
                 showToast('❌ Erro ao criar conta: ' + error.message, 'error');
             }
@@ -975,105 +1004,109 @@
         async function login() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-
-            if (!email || !password) {
-                showToast('Preencha todos os campos!', 'error');
-                return;
-            }
+            if (!email || !password) { showToast('Preencha todos os campos!', 'error'); return; }
 
             try {
-                const loginPromise = auth.signInWithEmailAndPassword(email, password);
-                const timeoutPromise = new Promise((_, reject) => 
-                    setTimeout(() => reject(new Error('Timeout de conexão')), 10000)
-                );
-                
-                const userCredential = await Promise.race([loginPromise, timeoutPromise]);
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
                 currentUser = userCredential.user;
                 await carregarDadosUsuario();
                 mostrarApp();
                 showToast('✅ Login realizado com sucesso!', 'success');
             } catch (error) {
-                console.error('Erro detalhado:', error);
-                if (error.message.includes('offline') || error.message.includes('Timeout')) {
-                    showToast('❌ Erro de conexão! Verifique sua internet.', 'error');
-                } else if (error.code === 'auth/user-not-found') {
-                    showToast('❌ Usuário não encontrado!', 'error');
-                } else if (error.code === 'auth/wrong-password') {
-                    showToast('❌ Senha incorreta!', 'error');
-                } else {
-                    showToast('❌ Erro ao fazer login: ' + error.message, 'error');
-                }
+                if (error.code === 'auth/user-not-found') showToast('❌ Usuário não encontrado!', 'error');
+                else if (error.code === 'auth/wrong-password') showToast('❌ Senha incorreta!', 'error');
+                else showToast('❌ Erro ao fazer login: ' + error.message, 'error');
             }
         }
 
         async function logout() {
-            if (currentUser) {
-                localStorage.removeItem(`user_${currentUser.uid}`);
-            }
             await auth.signOut();
             currentUser = null;
             document.getElementById('mainApp').style.display = 'none';
             document.getElementById('loginSection').style.display = 'block';
-            document.getElementById('loginEmail').value = '';
-            document.getElementById('loginPassword').value = '';
             showToast('👋 Logout realizado com sucesso!', 'success');
         }
 
-        // ==================== CARREGAR DADOS DO USUÁRIO ====================
+        // ==================== CARREGAR DADOS ====================
         async function carregarDadosUsuario() {
             if (!currentUser) return;
-            
             try {
                 const doc = await db.collection('users').doc(currentUser.uid).get();
                 if (doc.exists) {
-                    userData = doc.data();
+                    const data = doc.data();
+                    produtos = data.produtos || [];
+                    vendas = data.vendas || [];
                 } else {
                     throw new Error('Documento não encontrado');
                 }
             } catch (error) {
-                console.log('Erro ao carregar do Firestore, tentando cache local:', error);
                 const localData = localStorage.getItem(`user_${currentUser.uid}`);
                 if (localData) {
-                    userData = JSON.parse(localData);
+                    const data = JSON.parse(localData);
+                    produtos = data.produtos || [];
+                    vendas = data.vendas || [];
                 } else {
-                    userData = {
-                        email: currentUser.email,
-                        produtos: [
-                            { id: 1, nome: "Conta Instagram Premium", valor: 45.00 },
-                            { id: 2, nome: "Conta TikTok Seguida", valor: 30.00 },
-                            { id: 3, nome: "E-mail Corporativo", valor: 15.00 }
-                        ],
-                        vendas: [
-                            { id: 1, produto_id: 1, produto_nome: "Conta Instagram Premium", quantidade: 2, valor_unitario: 45.00, valor_total: 90.00, data: new Date().toISOString(), cancelada: false }
-                        ]
-                    };
+                    produtos = [
+                        { id: 1, nome: "Conta Instagram Premium", valor: 45.00 },
+                        { id: 2, nome: "Conta TikTok Seguida", valor: 30.00 },
+                        { id: 3, nome: "E-mail Corporativo", valor: 15.00 }
+                    ];
+                    vendas = [
+                        { id: 1, produto_id: 1, produto_nome: "Conta Instagram Premium", quantidade: 2, valor_unitario: 45.00, valor_total: 90.00, data: new Date().toISOString(), cancelada: false }
+                    ];
                 }
             }
         }
 
         async function salvarDadosUsuario() {
             if (!currentUser) return;
-            
-            localStorage.setItem(`user_${currentUser.uid}`, JSON.stringify(userData));
-            
+            const dados = { email: currentUser.email, produtos, vendas };
+            localStorage.setItem(`user_${currentUser.uid}`, JSON.stringify(dados));
             if (isOnline) {
                 try {
-                    await db.collection('users').doc(currentUser.uid).update(userData);
+                    await db.collection('users').doc(currentUser.uid).update(dados);
                 } catch (error) {
-                    console.log('Erro ao sincronizar, dados salvos localmente:', error);
+                    console.log('Erro ao sincronizar:', error);
                 }
             }
         }
 
         async function sincronizarDadosOffline() {
             if (!currentUser) return;
-            
             const localData = localStorage.getItem(`user_${currentUser.uid}`);
             if (localData) {
                 try {
                     await db.collection('users').doc(currentUser.uid).update(JSON.parse(localData));
                 } catch (error) {
                     console.log('Erro na sincronização:', error);
+                }
+            }
+        }
+
+        // ==================== ATUALIZAR TUDO ====================
+        async function atualizarTudo() {
+            atualizarListaProdutos();
+            atualizarTabelaVendas();
+            
+            if (document.getElementById('modalProdutos').style.display === 'flex') {
+                atualizarListaProdutos();
+            }
+            if (document.getElementById('modalVenda').style.display === 'flex') {
+                const select = document.getElementById('vendaProduto');
+                const valorSelecionado = select.value;
+                select.innerHTML = produtos.map(p => `<option value='${p.id}'>${p.nome} - R$ ${p.valor.toFixed(2).replace('.', ',')}</option>`).join('');
+                if (valorSelecionado && produtos.find(p => p.id == valorSelecionado)) select.value = valorSelecionado;
+                previewTotal();
+            }
+            if (document.getElementById('modalExcluir').style.display === 'flex') {
+                const vendasAtivas = vendas.filter(v => !v.cancelada);
+                const select = document.getElementById('excluirVendaSelect');
+                if (vendasAtivas.length > 0) {
+                    const valorSelecionado = select.value;
+                    select.innerHTML = vendasAtivas.map(v => `<option value='${v.id}'>#${v.id} - ${v.produto_nome} - ${v.quantidade}und - R$ ${v.valor_total.toFixed(2).replace('.', ',')}</option>`).join('');
+                    if (valorSelecionado && vendasAtivas.find(v => v.id == valorSelecionado)) select.value = valorSelecionado;
+                } else {
+                    fecharModal('modalExcluir');
                 }
             }
         }
@@ -1085,17 +1118,11 @@
             document.getElementById('mainApp').style.display = 'block';
             document.getElementById('userEmail').innerHTML = currentUser.email;
             document.getElementById('userAvatar').innerHTML = currentUser.email.charAt(0).toUpperCase();
-            
-            if (!isOnline) {
-                document.getElementById('offlineStatus').style.display = 'block';
-            }
-            
+            if (!isOnline) document.getElementById('offlineStatus').style.display = 'block';
             toggleDolar();
-            atualizarTabelaVendas();
-            atualizarListaProdutosModal();
+            atualizarTudo();
         }
 
-        // Verificar sessão
         auth.onAuthStateChanged(async (user) => {
             if (user) {
                 currentUser = user;
@@ -1104,7 +1131,7 @@
             }
         });
 
-        // ==================== FUNÇÕES DO Precificador ====================
+        // ==================== PRESIFICADOR ====================
         function toggleDolar() {
             const isChecked = document.getElementById('dolarToggle').checked;
             const dolarFields = document.getElementById('dolarFields');
@@ -1133,10 +1160,8 @@
         function converterDolar() {
             const dolar = parseFloat(document.getElementById('valorDolar').value);
             const cotacao = parseFloat(document.getElementById('cotacaoDolar').value);
-            if (!isNaN(dolar) && !isNaN(cotacao)) {
-                document.getElementById('vlrBase').value = (dolar * cotacao).toFixed(2);
-                showToast('💰 Valor convertido para Real!', 'success');
-            }
+            document.getElementById('vlrBase').value = (dolar * cotacao).toFixed(2);
+            showToast('💰 Valor convertido para Real!', 'success');
         }
 
         function getDescontoPercent(quantidade) {
@@ -1161,28 +1186,23 @@
             const valorTotal = valorFinalUnit * quantidade;
 
             document.getElementById('resultadoArea').innerHTML = `
-                📊 RESULTADO DO CÁLCULO<br>
-                ═══════════════════════<br>
-                📦 Quantidade: ${quantidade} itens<br>
-                💰 TOTAL: R$ ${valorTotal.toFixed(2).replace('.', ',')}<br>
-                ═══════════════════════<br>
-                📈 Custo (c/ revenda): R$ ${precoCusto.toFixed(2).replace('.', ',')}<br>
-                🏷️ Unitário final: R$ ${valorFinalUnit.toFixed(2).replace('.', ',')}<br>
-                🎯 Desconto aplicado: ${desconto}%<br>
-                💵 Margem de lucro: ${margemLucro}%
+                QUANTIDADE: ${quantidade} ITENS<br>
+                TOTAL: R$ ${valorTotal.toFixed(2).replace('.', ',')}<br>
+                ----------------------------<br>
+                CUSTO (C/ REVENDA): R$ ${precoCusto.toFixed(2).replace('.', ',')}<br>
+                UNIT. FINAL: R$ ${valorFinalUnit.toFixed(2).replace('.', ',')}<br>
+                DESC. APLICADO: ${desconto}%
             `;
             showToast('✅ Preço calculado com sucesso!', 'success');
         }
 
-        // ==================== FUNÇÕES DE VENDAS ====================
+        // ==================== VENDAS ====================
         function atualizarTabelaVendas() {
-            if (!userData || !userData.vendas) return;
-            
             const periodo = document.getElementById('filtroPeriodo').value;
             const hoje = new Date();
             let dataInicio, dataFim;
 
-            const vendasAtivas = userData.vendas.filter(v => !v.cancelada);
+            const vendasAtivas = vendas.filter(v => !v.cancelada);
 
             if (periodo === 'todos') {
                 renderizarTabela(vendasAtivas);
@@ -1220,7 +1240,7 @@
         function renderizarTabela(vendasList) {
             const tbody = document.getElementById('tabelaVendasBody');
             tbody.innerHTML = '';
-            if (!vendasList || vendasList.length === 0) {
+            if (vendasList.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Nenhuma venda encontrada</td></tr>';
                 return;
             }
@@ -1249,13 +1269,8 @@
         function aplicarFiltroPersonalizado() {
             const inicio = new Date(document.getElementById('dataInicio').value);
             const fim = new Date(document.getElementById('dataFim').value);
-            if (isNaN(inicio) || isNaN(fim)) {
-                showToast('Selecione as datas corretamente!', 'error');
-                return;
-            }
             fim.setHours(23, 59, 59, 999);
-            const vendasAtivas = userData.vendas.filter(v => !v.cancelada);
-            const vendasFiltradas = vendasAtivas.filter(v => new Date(v.data) >= inicio && new Date(v.data) <= fim);
+            const vendasFiltradas = vendas.filter(v => !v.cancelada && new Date(v.data) >= inicio && new Date(v.data) <= fim);
             renderizarTabela(vendasFiltradas);
             calcularTotal(vendasFiltradas);
             document.getElementById('periodoInfo').innerHTML = `Período: ${inicio.toLocaleDateString()} a ${fim.toLocaleDateString()}`;
@@ -1265,131 +1280,104 @@
         // ==================== GERENCIAR PRODUTOS ====================
         function abrirModalProdutos() {
             document.getElementById('modalProdutos').style.display = 'flex';
-            atualizarListaProdutosModal();
+            atualizarListaProdutos();
         }
 
-        function atualizarListaProdutosModal() {
+        function atualizarListaProdutos() {
             const container = document.getElementById('listaProdutos');
-            if (!container) return;
-            
             container.innerHTML = '';
-            if (!userData.produtos || userData.produtos.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #aaa;">Nenhum produto cadastrado</p>';
-                return;
-            }
-            
-            userData.produtos.forEach(p => {
-                const productDiv = document.createElement('div');
-                productDiv.className = 'product-item';
-                productDiv.innerHTML = `
-                    <div class="product-info">
-                        📦 <strong>${p.nome}</strong> - R$ ${p.valor.toFixed(2).replace('.', ',')}
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-secondary btn-sm" onclick="editarProduto(${p.id})">✏️ Editar</button>
-                        <button class="btn btn-danger btn-sm" onclick="excluirProduto(${p.id})">🗑️ Excluir</button>
+            produtos.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'product-item';
+                div.id = `produto-${p.id}`;
+                div.innerHTML = `
+                    <span>📦 <strong>${escapeHtml(p.nome)}</strong> - R$ ${p.valor.toFixed(2).replace('.', ',')}</span>
+                    <div>
+                        <button class="btn btn-secondary btn-sm" onclick="editarProduto(${p.id})">✏️</button>
+                        <button class="btn btn-danger btn-sm" onclick="excluirProduto(${p.id})">🗑️</button>
                     </div>
                 `;
-                container.appendChild(productDiv);
+                container.appendChild(div);
             });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         async function adicionarProduto() {
             const nome = document.getElementById('novoProdutoNome').value.trim();
             const valor = parseFloat(document.getElementById('novoProdutoValor').value);
-            
-            if (!nome || isNaN(valor) || valor <= 0) { 
-                showToast('Preencha todos os campos corretamente!', 'error');
-                return; 
-            }
-            
-            const novoId = userData.produtos.length > 0 ? Math.max(...userData.produtos.map(p => p.id)) + 1 : 1;
-            userData.produtos.push({ id: novoId, nome, valor });
+            if (!nome || isNaN(valor)) { showToast('Preencha todos os campos!', 'error'); return; }
+            const novoId = Math.max(...produtos.map(p => p.id), 0) + 1;
+            produtos.push({ id: novoId, nome, valor });
             await salvarDadosUsuario();
-            
-            // Limpar os campos
             document.getElementById('novoProdutoNome').value = '';
             document.getElementById('novoProdutoValor').value = '';
-            
-            atualizarListaProdutosModal();
+            await atualizarTudo();
             showToast(`✅ Produto "${nome}" adicionado com sucesso!`, 'success');
-            
-            // Focar no campo nome para próximo cadastro
             document.getElementById('novoProdutoNome').focus();
         }
 
         async function editarProduto(id) {
-            const produto = userData.produtos.find(p => p.id === id);
-            if (!produto) return;
-            
-            const novoNome = prompt('✏️ Editar nome do produto:', produto.nome);
-            if (!novoNome) return;
-            
-            const novoValor = parseFloat(prompt('💰 Editar valor do produto (R$):', produto.valor));
-            if (isNaN(novoValor) || novoValor <= 0) {
-                showToast('Valor inválido!', 'error');
-                return;
+            const produto = produtos.find(p => p.id === id);
+            const novoNome = prompt('Novo nome:', produto.nome);
+            const novoValor = parseFloat(prompt('Novo valor:', produto.valor));
+            if (novoNome && !isNaN(novoValor)) {
+                produto.nome = novoNome;
+                produto.valor = novoValor;
+                await salvarDadosUsuario();
+                await atualizarTudo();
+                showToast(`✅ Produto "${novoNome}" atualizado!`, 'success');
             }
-            
-            produto.nome = novoNome;
-            produto.valor = novoValor;
-            await salvarDadosUsuario();
-            atualizarListaProdutosModal();
-            showToast(`✅ Produto "${novoNome}" atualizado com sucesso!`, 'success');
         }
 
         async function excluirProduto(id) {
-            const produto = userData.produtos.find(p => p.id === id);
-            if (!produto) return;
-            
-            const confirmacao = confirm(`⚠️ Tem certeza que deseja excluir o produto "${produto.nome}"?\n\nEsta ação não pode ser desfeita!`);
-            
-            if (confirmacao) {
-                userData.produtos = userData.produtos.filter(p => p.id !== id);
-                await salvarDadosUsuario();
-                atualizarListaProdutosModal();
-                showToast(`✅ Produto "${produto.nome}" excluído com sucesso!`, 'success');
+            const produto = produtos.find(p => p.id === id);
+            if (confirm(`Excluir o produto "${produto.nome}"?`)) {
+                const element = document.getElementById(`produto-${id}`);
+                if (element) element.classList.add('removing');
+                setTimeout(async () => {
+                    produtos = produtos.filter(p => p.id !== id);
+                    await salvarDadosUsuario();
+                    await atualizarTudo();
+                    showToast(`✅ Produto "${produto.nome}" excluído!`, 'success');
+                }, 300);
             }
         }
 
         // ==================== REGISTRAR VENDA ====================
         function abrirModalVenda() {
-            if (!userData.produtos || userData.produtos.length === 0) {
-                showToast('⚠️ Cadastre pelo menos um produto antes de registrar uma venda!', 'warning');
-                return;
-            }
-            
+            if (produtos.length === 0) { showToast('⚠️ Cadastre um produto primeiro!', 'warning'); return; }
             const select = document.getElementById('vendaProduto');
-            select.innerHTML = userData.produtos.map(p => `<option value='${p.id}'>${p.nome} - R$ ${p.valor.toFixed(2).replace('.', ',')}</option>`).join('');
+            select.innerHTML = produtos.map(p => `<option value='${p.id}'>${p.nome} - R$ ${p.valor.toFixed(2).replace('.', ',')}</option>`).join('');
             document.getElementById('modalVenda').style.display = 'flex';
             document.getElementById('vendaQuantidade').value = '1';
             previewTotal();
+            document.getElementById('vendaProduto').addEventListener('change', previewTotal);
+            document.getElementById('vendaQuantidade').addEventListener('input', previewTotal);
         }
 
         function previewTotal() {
             const produtoId = document.getElementById('vendaProduto').value;
             const qtd = parseInt(document.getElementById('vendaQuantidade').value) || 0;
-            const produto = userData.produtos.find(p => p.id == produtoId);
-            if (produto && qtd > 0) {
+            const produto = produtos.find(p => p.id == produtoId);
+            if (produto) {
                 const total = produto.valor * qtd;
-                document.getElementById('vendaTotalPreview').innerHTML = `💰 Total da venda: R$ ${total.toFixed(2).replace('.', ',')}`;
-            } else {
-                document.getElementById('vendaTotalPreview').innerHTML = '💰 Total da venda: R$ 0,00';
+                document.getElementById('vendaTotalPreview').innerHTML = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
             }
         }
 
         async function registrarVenda() {
             const produtoId = parseInt(document.getElementById('vendaProduto').value);
             const qtd = parseInt(document.getElementById('vendaQuantidade').value);
-            const produto = userData.produtos.find(p => p.id === produtoId);
-            
-            if (!produto || qtd <= 0) { 
-                showToast('Selecione um produto e quantidade válida!', 'error');
-                return; 
-            }
+            const produto = produtos.find(p => p.id === produtoId);
+            if (!produto || qtd <= 0) { showToast('Selecione um produto válido!', 'error'); return; }
             
             const novaVenda = {
-                id: userData.vendas.length > 0 ? Math.max(...userData.vendas.map(v => v.id)) + 1 : 1,
+                id: Math.max(...vendas.map(v => v.id), 0) + 1,
                 produto_id: produto.id,
                 produto_nome: produto.nome,
                 quantidade: qtd,
@@ -1398,22 +1386,17 @@
                 data: new Date().toISOString(),
                 cancelada: false
             };
-            
-            userData.vendas.push(novaVenda);
+            vendas.push(novaVenda);
             await salvarDadosUsuario();
             fecharModal('modalVenda');
-            atualizarTabelaVendas();
-            showToast(`✅ Venda registrada: ${qtd}x ${produto.nome} - Total: R$ ${(produto.valor * qtd).toFixed(2).replace('.', ',')}`, 'success');
+            await atualizarTudo();
+            showToast(`✅ Venda registrada: ${qtd}x ${produto.nome}`, 'success');
         }
 
         // ==================== EXCLUIR VENDA ====================
         function abrirModalExcluirVenda() {
-            const vendasAtivas = userData.vendas.filter(v => !v.cancelada);
-            if (vendasAtivas.length === 0) { 
-                showToast('⚠️ Não há vendas ativas para excluir!', 'warning');
-                return; 
-            }
-            
+            const vendasAtivas = vendas.filter(v => !v.cancelada);
+            if (vendasAtivas.length === 0) { showToast('Não há vendas para excluir!', 'warning'); return; }
             const select = document.getElementById('excluirVendaSelect');
             select.innerHTML = vendasAtivas.map(v => `<option value='${v.id}'>#${v.id} - ${v.produto_nome} - ${v.quantidade}und - R$ ${v.valor_total.toFixed(2).replace('.', ',')}</option>`).join('');
             document.getElementById('modalExcluir').style.display = 'flex';
@@ -1421,57 +1404,27 @@
 
         async function excluirVenda() {
             const vendaId = parseInt(document.getElementById('excluirVendaSelect').value);
-            const venda = userData.vendas.find(v => v.id === vendaId);
-            
-            if (!venda) return;
-            
-            const confirmacao = confirm(`⚠️ Tem certeza que deseja excluir a venda #${vendaId}?\n\nProduto: ${venda.produto_nome}\nValor: R$ ${venda.valor_total.toFixed(2).replace('.', ',')}\n\nEsta ação não pode ser desfeita!`);
-            
-            if (confirmacao) {
-                userData.vendas = userData.vendas.filter(v => v.id !== vendaId);
+            if (confirm('Excluir permanentemente esta venda?')) {
+                vendas = vendas.filter(v => v.id !== vendaId);
                 await salvarDadosUsuario();
                 fecharModal('modalExcluir');
-                atualizarTabelaVendas();
-                showToast(`✅ Venda #${vendaId} excluída com sucesso!`, 'success');
+                await atualizarTudo();
+                showToast(`✅ Venda #${vendaId} excluída!`, 'success');
             }
         }
 
         // ==================== UTILITÁRIOS ====================
-        function fecharModal(id) { 
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        }
+        function fecharModal(id) { document.getElementById(id).style.display = 'none'; }
 
         function switchTab(tab) {
-            const precificadorPage = document.getElementById('PrecificadorPage');
-            const vendasPage = document.getElementById('vendasPage');
-            const navBtns = document.querySelectorAll('.nav-btn');
-            
-            if (tab === 'Precificador') {
-                precificadorPage.classList.add('active');
-                vendasPage.classList.remove('active');
-                navBtns[0].classList.add('active');
-                navBtns[1].classList.remove('active');
-            } else {
-                precificadorPage.classList.remove('active');
-                vendasPage.classList.add('active');
-                navBtns[0].classList.remove('active');
-                navBtns[1].classList.add('active');
-                atualizarTabelaVendas();
-            }
+            document.getElementById('presificadorPage').classList.toggle('active', tab === 'presificador');
+            document.getElementById('vendasPage').classList.toggle('active', tab === 'vendas');
+            document.querySelectorAll('.nav-btn').forEach((btn, i) => btn.classList.toggle('active', (tab === 'presificador' && i === 0) || (tab === 'vendas' && i === 1)));
+            if (tab === 'vendas') atualizarTabelaVendas();
         }
 
-        // Event listeners
-        document.getElementById('vendaProduto')?.addEventListener('change', previewTotal);
-        document.getElementById('vendaQuantidade')?.addEventListener('input', previewTotal);
-        
-        window.onclick = e => { 
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-            }
-        };
+        // Inicialização
+        window.onclick = e => { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; };
     </script>
 </body>
 </html>
